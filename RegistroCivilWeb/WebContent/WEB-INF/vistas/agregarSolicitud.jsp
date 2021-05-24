@@ -34,7 +34,7 @@
 			<form method="POST" action="AgregarSolicitudController.do">
 				<div class="card">
 					<div class="card-header has-background-primary">
-						<span class="card-header-title">Ingreso Solicitud</span>
+						<span class="card-header-title is-centered">Ingreso Solicitud</span>
 					</div>
 					<div class="card-content">
 						<div class="field">
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 						<div class="field">
-							<label class="label" for="marca-select">Tipo Solicitud</label>
+							<label class="label" for="solicitud-select">Tipo Solicitud</label>
 							<div class="control">
 								<div class="select">
 									<select name="solicitud-select" id="solicitud-select">
@@ -65,9 +65,9 @@
 							</div>
 						</div>
 						<div class="field">
-							<label class="label" for="anio-txt">Número de Solicitud</label>
+							<label class="label" for="numeroSolicitudOriginal-txt">Número de Solicitud</label>
 							<div class="control">
-								<input type="number" name="anio-txt" id="anio-txt"
+								<input type="number" name="numeroSolicitudOriginal-txt" id="numeroSolicitudOriginal-txt"
 									class="input" />
 							</div>
 						</div>

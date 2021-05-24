@@ -30,7 +30,7 @@
 
 					</div>
 					<div class="navbar-item">
-						<a class="navbar-item has-text-link-light"> Atender Solicitudes </a>
+						<a class="navbar-item has-text-link-light" href="AtenderSolicitudesController.do"> Atender Solicitudes </a>
 
 					</div>
 				</div>

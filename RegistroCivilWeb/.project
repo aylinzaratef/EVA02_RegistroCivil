@@ -3,6 +3,7 @@
 	<name>RegistroCivilWeb</name>
 	<comment></comment>
 	<projects>
+		<project>RegistroCivilModel</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

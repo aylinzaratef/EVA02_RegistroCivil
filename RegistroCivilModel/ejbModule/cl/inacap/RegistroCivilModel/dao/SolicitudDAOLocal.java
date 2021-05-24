@@ -13,6 +13,6 @@ public interface SolicitudDAOLocal {
 	void save(Solicitud solicitud);
 	List<Solicitud> getAll();
 	void delete (Solicitud solicitud);
-	List<Solicitud> filterByName(String nombre);
-	
+	List<Solicitud> filterByNumber(int numeroSolicitud);
+	List<Solicitud>filterByType(String tipoSolicitud);
 }
