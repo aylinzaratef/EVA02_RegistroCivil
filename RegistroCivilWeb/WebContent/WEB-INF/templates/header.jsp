@@ -25,16 +25,17 @@
 				<div class="navbar-start">
 					<a class="navbar-item has-text-link-light" href="index.jsp"> Inicio </a>
 
-					<div class="navbar-item">
-						<a class="navbar-item has-text-link-light" href="AgregarSolicitudController.do"> Ingresar Solicitud </a>
+					<div class="navbar-item has-dropdown is-hoverable">
+						<a class="navbar-link has-text-link-light"> Solicitudes </a>
 
-					</div>
-					<div class="navbar-item">
-						<a class="navbar-item has-text-link-light" href="AtenderSolicitudesController.do"> Atender Solicitudes </a>
-
+						<div class="navbar-dropdown">
+							<a class="navbar-item" href="AgregarSolicitudController.do"> Ingresar Solicitud </a> 
+							<a class="navbar-item" href="AtenderSolicitudesController.do"> Atender Solicitudes</a> 
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</nav>
 	</header>
 

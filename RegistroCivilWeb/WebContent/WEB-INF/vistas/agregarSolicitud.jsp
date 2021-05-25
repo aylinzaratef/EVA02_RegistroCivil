@@ -3,15 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../templates/header.jsp"></jsp:include>
 <main class="container mt-6">
-	<c:if test="${mensaje !=null }">
-		<div class="columns is-centered mb-6">
-			<div class="column is-6">
-				<div class="notification is-info">
-					<p>${mensaje}</p>
-				</div>
-			</div>
-		</div>
-	</c:if>
+
 	<c:if test="${errores != null }" >
 		<div class="columns is-centered mb-6">
 			<div class="column is-6">
@@ -45,7 +37,7 @@
 							</div>
 						</div>
 						<div class="field">
-							<label class="label" for="nombre-txt">Nombre</label>
+							<label class="label" for="nombre-txt">Nombre y Apellido</label>
 							<div class="control">
 								<input type="text" class="input" autocomplete="off" id="nombre-txt"
 									name="nombre-txt" />
@@ -65,7 +57,7 @@
 							</div>
 						</div>
 						<div class="field">
-							<label class="label" for="numeroSolicitudOriginal-txt">Número de Solicitud</label>
+							<label class="label" for="numeroSolicitudOriginal-txt">Número de Solicitud Original para retiro de Cédula de Identidad</label>
 							<div class="control">
 								<input type="number" name="numeroSolicitudOriginal-txt" id="numeroSolicitudOriginal-txt"
 									class="input" />
@@ -74,7 +66,7 @@
 					</div>
 					<div class="card-footer has-text-centered">
 						<div class="card-footer-item">
-							<button type="submit" class="button is-primary">Ingresar Solicitud</button>
+							<button type="submit" class="button is-primary" >Ingresar Solicitud</button>
 						</div>
 					</div>
 				</div>

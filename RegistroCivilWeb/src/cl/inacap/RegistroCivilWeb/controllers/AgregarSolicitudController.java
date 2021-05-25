@@ -47,7 +47,7 @@ public class AgregarSolicitudController extends HttpServlet {
 				validacion = true;
 			}
 
-			} catch (Exception e) {
+		} catch (Exception e) {
 		}
 		return validacion;
 	}
@@ -62,19 +62,25 @@ public class AgregarSolicitudController extends HttpServlet {
 
 		List<String> errores = new ArrayList<>();
 
-		String nombre = request.getParameter("nombre-txt").trim();
-		if (nombre.isEmpty()) {
-			errores.add("Debe ingresar un nombre.");
-		}
 		String rut = request.getParameter("rut-txt").trim();
 		if (validarRut(rut) == false) {
 			errores.add("Debe ingresar un rut válido.");
 		}
-
-		String solicitudSelect = request.getParameter("solicitud-select").trim();
-		if (solicitudSelect.isEmpty()) {
-			errores.add("Debe Seleccionar un tipo de solicitud.");
+		String nombre = request.getParameter("nombre-txt").trim();
+		if (nombre.isEmpty()) {
+			errores.add("Debe ingresar un nombre y apellido válido.");
 		}
+		int numeroOriginal = 0;
+		String solicitudSelect = request.getParameter("solicitud-select").trim();
+		if (solicitudSelect.toLowerCase().contains("retiro de cédula de identidad")) {
+			String numeroSolicitudOriginal = request.getParameter("numeroSolicitudOriginal-txt");
+			if (numeroSolicitudOriginal.isEmpty()) {
+				errores.add("Debe ingresar un número de Solicitud válido.");
+			} else {
+				numeroOriginal = Integer.parseInt(numeroSolicitudOriginal);
+			}
+		}
+
 		if (errores.isEmpty()) {
 
 			Solicitud solicitud = new Solicitud();
@@ -82,14 +88,20 @@ public class AgregarSolicitudController extends HttpServlet {
 			solicitud.setNombre(nombre);
 			solicitud.setTipoSolicitud(solicitudSelect);
 			solicitud.setNumeroSolicitud(atomicInteger.incrementAndGet());
+			solicitud.setNumeroSolicitudOriginal(numeroOriginal);
 			solicitudDAO.save(solicitud);
 
-			request.setAttribute("mensaje", "Solicitud enviada exitosamente.");
 		} else {
 			request.setAttribute("errores", errores);
 		}
 
-		doGet(request, response);
+		if (errores.size() > 0) {
+
+			doGet(request, response);
+		} else {
+			response.sendRedirect("AtenderSolicitudesController.do");
+		}
+
 	}
 
 }
