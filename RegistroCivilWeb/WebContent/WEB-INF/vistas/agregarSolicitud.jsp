@@ -32,14 +32,14 @@
 						<div class="field">
 							<label class="label" for="nombre-txt">Rut</label>
 							<div class="control">
-								<input type="text" class="input" autocomplete="off" id="rut-txt"
+								<input type="text" class="input" placeholder="12345678-9 o 123456789" autocomplete="off" id="rut-txt"
 									name="rut-txt" />
 							</div>
 						</div>
 						<div class="field">
 							<label class="label" for="nombre-txt">Nombre y Apellido</label>
 							<div class="control">
-								<input type="text" class="input" autocomplete="off" id="nombre-txt"
+								<input type="text" class="input" placeholder="Juan Peréz" autocomplete="off" id="nombre-txt"
 									name="nombre-txt" />
 							</div>
 						</div>

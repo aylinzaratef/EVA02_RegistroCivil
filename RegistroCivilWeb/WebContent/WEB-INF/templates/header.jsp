@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registro Civil</title>
+<link rel="shortcut icon" href="img/favicon.ico" />
 <link href="vendor/bulma/css/bulma.min.css" rel="stylesheet" />
 </head>
 <body>

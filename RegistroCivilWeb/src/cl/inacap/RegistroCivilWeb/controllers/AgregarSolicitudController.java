@@ -37,13 +37,14 @@ public class AgregarSolicitudController extends HttpServlet {
 			rut = rut.replace("-", "");
 			int rutAux = Integer.parseInt(rut.substring(0, rut.length() - 1));
 
-			char dv = rut.charAt(rut.length() - 1);
+			char verificador = rut.charAt(rut.length() - 1);
 
-			int m = 0, s = 1;
+			int m = 0;
+			int suma = 1;
 			for (; rutAux != 0; rutAux /= 10) {
-				s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+				suma = (suma + rutAux % 10 * (9 - m++ % 6)) % 11;
 			}
-			if (dv == (char) (s != 0 ? s + 47 : 75)) {
+			if (verificador == (char) (suma != 0 ? suma + 47 : 75)) {
 				validacion = true;
 			}
 
@@ -69,7 +70,15 @@ public class AgregarSolicitudController extends HttpServlet {
 		String nombre = request.getParameter("nombre-txt").trim();
 		if (nombre.isEmpty()) {
 			errores.add("Debe ingresar un nombre y apellido válido.");
+		}else {
+			String [] nombreApellido = nombre.split(" ");
+			if(nombreApellido.length != 2) {
+				errores.add("Debe ingresar un nombre y apellido válido.");
+			}
 		}
+		
+		
+		
 		int numeroOriginal = 0;
 		String solicitudSelect = request.getParameter("solicitud-select").trim();
 		if (solicitudSelect.toLowerCase().contains("retiro de cédula de identidad")) {
